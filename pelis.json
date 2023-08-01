@@ -1,12 +1,17 @@
-[{
-    "title": "Titulo de la película",
+[
+  {
+    "title": "rapidos y furiosos",
     "rating": 4,
-    "tags": ["acción", "favorita", "nueva"]
-   
+    "tags": ["acción", "favorita"]
   },
   {
-    "title": "Titulo de la segunda película",
-    "rating": 3,
-    "tags": ["favorita", "nueva"]
-    
-  }] 
+    "title": "la noche del demonio",
+    "rating": 2,
+    "tags": ["favorita", "nueva", "terror"]
+  },
+  {
+    "title": "destino final 3",
+    "rating": 5,
+    "tags": ["favorita", "terror"]
+  }
+]
