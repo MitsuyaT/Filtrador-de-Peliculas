@@ -1,24 +1,9 @@
 const peliculas = require("./pelis.json");
 
-function sinParametros() {
-  return "Funciono sin Parametros";
-}
+function sinParametros() {}
 
-function sort() {
-  return "Funciono sort";
-}
+function sort() {}
 
-function search() {
-  return "Funciono search";
-}
+function search() {}
 
-function tag() {
-  return "Funciono tag";
-}
-
-module.exports = {
-  sinParametros,
-  sort,
-  search,
-  tag,
-};
+function tag() {}
