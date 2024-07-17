@@ -15,7 +15,7 @@ function parsear(argv) {
 
 function ejecutarOperacion(filtrador) {
   const mapa = {
-    "": funcion.sinParametros,
+    nada: funcion.sinParametros,
     sort: funcion.sort,
     search: funcion.search,
     tag: funcion.tag,
