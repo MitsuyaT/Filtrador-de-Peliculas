@@ -30,6 +30,7 @@ function main() {
   const soloArgumentos = process.argv.slice(2);
   const argumentoParseado = parsear(soloArgumentos);
   const resultado = ejecutarOperacion(argumentoParseado);
+  console.table(resultado);
 }
 
 main();
