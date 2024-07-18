@@ -2,23 +2,31 @@ const peliculas = require("./pelis.json");
 
 function sinParametros() {}
 
-function sort(pelis) {
-    const titles = pelis.map(pelicula => pelicula.title);
-    const ratings = pelis.map(pelicula => pelicula.rating);
-
-    function sortRatings(ratingArray) {
-        return ratingArray.sort((a, b) => b - a);
+function sort(sort) {
+    switch (sort) {
+      case "rating":
+        const ratings = peliculas.map((pelicula) => pelicula.rating);
+        return ratings.sort((a, b) => b - a);
+  
+      case "title":
+        const titles = peliculas.map((pelicula) => pelicula.title);
+        return titles.sort();
+  
+      default:
+        console.log("Error");
+        break;
     }
-    function sortTitles(titleArray) {
-        return titleArray.sort();
-    }
-    return {
-        sortedTitles: sortTitles(titles),
-        sortedRatings: sortRatings(ratings)
-    };
-}
-sort(peliculas);
-
+  }
+  
 function search() {}
 
-function tag() {}
+function tag(buscaTag) {
+  return peliculas.filter((pelicula) => pelicula.tags.includes(buscaTag));
+}
+
+module.exports = {
+  sinParametros,
+  sort,
+  search,
+  tag,
+};
