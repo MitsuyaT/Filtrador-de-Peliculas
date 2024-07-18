@@ -23,22 +23,18 @@ function ejecutarOperacion(filtrador) {
   const filtro = filtrador.filtro;
   const ejecutor = mapa[filtro];
 
-  //Este bloque de codigo revisa que filtro tiene para invocar la funcion correspondiente, en caso que necesite un parametro este se lo pasa.
-  if (typeof ejecutor === "function") {
-    if (filtrador.filtro === "nada") {
+  //Este switch es para saber si la funcion que determina el filtro necesita pasar parametros.
+  switch (filtro) {
+    case "nada":
       return ejecutor();
-    }
-    if (filtrador.filtro === "sort") {
-      return ejecutor(filtrador.sort);
-    }
-    if (filtrador.filtro === "search") {
+    case "sort":
+      return ejecutor();
+    case "search":
       return ejecutor(filtrador.search);
-    }
-    if (filtrador.filtro === "tag") {
+    case "tag":
       return ejecutor(filtrador.tag);
-    }
-  } else {
-    throw new Error(`Operación '${filtro}' no reconocida.`); //Si no hay funcion valida tira error
+    default:
+      throw new Error(`Operación '${filtro}' no reconocida.`);
   }
 }
 
