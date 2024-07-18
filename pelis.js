@@ -8,8 +8,13 @@ function sort() {}
 
 function search() {}
 
-function tag() {}
+function tag(buscaTag) {
+  return peliculas.filter((pelicula) => pelicula.tags.includes(buscaTag));
+}
 
 module.exports = {
   sinParametros,
+  sort,
+  search,
+  tag,
 };
