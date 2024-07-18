@@ -23,16 +23,27 @@ function ejecutarOperacion(filtrador) {
   const filtro = filtrador.filtro;
   const ejecutor = mapa[filtro];
 
+  //Este bloque de codigo revisa que filtro tiene para invocar la funcion correspondiente, en caso que necesite un parametro este se lo pasa.
   if (typeof ejecutor === "function") {
-    return ejecutor();
+    if (filtrador.filtro === "nada") {
+      return ejecutor();
+    }
+    if (filtrador.filtro === "sort") {
+      return ejecutor(filtrador.sort);
+    }
+    if (filtrador.filtro === "search") {
+      return ejecutor(filtrador.search);
+    }
+    if (filtrador.filtro === "tag") {
+      return ejecutor(filtrador.tag);
+    }
   } else {
-    throw new Error(`Operación '${filtro}' no reconocida.`);
+    throw new Error(`Operación '${filtro}' no reconocida.`); //Si no hay funcion valida tira error
   }
 }
 
 function main() {
   const soloArgumentos = process.argv.slice(2);
-  console.log(soloArgumentos);
   const argumentoParseado = parsear(soloArgumentos);
   const resultado = ejecutarOperacion(argumentoParseado);
   console.table(resultado);
