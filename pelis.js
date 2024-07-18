@@ -20,7 +20,9 @@ function sort(sort) {
   }
 }
 
-function search() {}
+function search() {
+  
+}
 
 function tag(buscaTag) {
   return peliculas.filter((pelicula) => pelicula.tags.includes(buscaTag));
