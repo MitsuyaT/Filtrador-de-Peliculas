@@ -7,21 +7,20 @@ function sinParametros() {
 function sort(sort) {
   switch (sort) {
     case "rating":
-      const ratings = peliculas.map((pelicula) => pelicula.rating);
-      return ratings.sort((a, b) => b - a);
+      return peliculas.map((pelicula) => ({ title: pelicula.title, rating: pelicula.rating }))
+      .sort((a, b) => b.rating - a.rating);
 
     case "title":
-      const titles = peliculas.map((pelicula) => pelicula.title);
-      return titles.sort();
-
-    default:
+      return peliculas.map((pelicula) => pelicula.title).sort();
+    
+      default:
       console.log("Error");
       break;
   }
 }
 
-function search() {
-  
+function search(buscador) {
+  return peliculas.filter((pelicula) => pelicula.title.includes(buscador));
 }
 
 function tag(buscaTag) {
