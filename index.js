@@ -28,7 +28,7 @@ function ejecutarOperacion(filtrador) {
     case "nada":
       return ejecutor();
     case "sort":
-      return ejecutor();
+      return ejecutor(filtrador.sort);
     case "search":
       return ejecutor(filtrador.search);
     case "tag":
