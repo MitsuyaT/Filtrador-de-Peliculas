@@ -20,11 +20,11 @@ function sort(sort) {
 }
 
 function search(buscador) {
-  return peliculas.filter((pelicula) => pelicula.title.includes(buscador));
+  return peliculas.filter((pelicula) => pelicula.title.includes(buscador.toLowerCase()));
 }
 
 function tag(buscaTag) {
-  return peliculas.filter((pelicula) => pelicula.tags.includes(buscaTag));
+  return peliculas.filter((pelicula) => pelicula.tags.includes(buscaTag.toLowerCase()));
 }
 
 module.exports = {

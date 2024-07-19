@@ -7,7 +7,8 @@ function parsear(argv) {
     //iteramos dentro del array
     if (item.startsWith("--")) {
       const nombreSinGuiones = item.slice(2); //Sacamos los guiones
-      respuesta[nombreSinGuiones] = argv[ind + 1]; //colocamos las propiedades
+      const parametrosMinusculos = nombreSinGuiones.toLowerCase()
+      respuesta[parametrosMinusculos] = argv[ind + 1]; //colocamos las propiedades
     }
   });
   return respuesta; // retornamos todo lo que hicimos
@@ -20,7 +21,7 @@ function ejecutarOperacion(filtrador) {
     search: funcion.search,
     tag: funcion.tag,
   };
-  const filtro = filtrador.filtro;
+  const filtro = filtrador.filtro.toLowerCase();
   const ejecutor = mapa[filtro];
 
   //Este switch es para saber si la funcion que determina el filtro necesita pasar parametros.
